@@ -2919,23 +2919,75 @@
   });
 
 
-  // Page load এ check করি body.dark আছে কিনা
+  // Smooth Scroll for Navigation Links
+  document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        // Use GSAP ScrollToPlugin for smooth scroll
+        gsap.to(window, {
+          duration: 1.5,
+          scrollTo: {
+            y: targetElement,
+            offsetY: 100 // Offset para dejar espacio del header
+          },
+          ease: "power2.inOut"
+        });
+
+        // Close mobile menu if open
+        const sideInfo = document.querySelector('.side-info');
+        const overlay = document.querySelector('.offcanvas-overlay');
+        if (sideInfo && sideInfo.classList.contains('info-open')) {
+          sideInfo.classList.remove('info-open');
+          overlay.classList.remove('overlay-open');
+        }
+      }
+    });
+  });
+
+  // Theme Toggle with localStorage persistence
   const toggleBtn = document.getElementById('theme-toggle');
-  if (document.body.classList.contains('dark')) {
-    toggleBtn.classList.add('dark-mode');
+
+  // Check localStorage on page load
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme) {
+    // Use saved preference
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
+      toggleBtn.classList.add('dark-mode');
+    } else {
+      document.body.classList.add('light');
+      document.body.classList.remove('dark');
+      toggleBtn.classList.add('light-mode');
+    }
   } else {
-    toggleBtn.classList.add('light-mode');
+    // No saved preference, use default from HTML (now light)
+    if (document.body.classList.contains('dark')) {
+      toggleBtn.classList.add('dark-mode');
+    } else {
+      toggleBtn.classList.add('light-mode');
+    }
   }
 
+  // Toggle theme on button click
   toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
+    document.body.classList.toggle('light');
 
     if (document.body.classList.contains('dark')) {
       toggleBtn.classList.remove('light-mode');
       toggleBtn.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
     } else {
       toggleBtn.classList.remove('dark-mode');
       toggleBtn.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
     }
   });
 

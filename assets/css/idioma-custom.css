@@ -1,0 +1,83 @@
+/**
+ * Idioma Media - Custom Styles
+ * Brand colors and customizations for Idioma Futbol
+ */
+
+/* ========================================
+   BRAND COLORS
+   ======================================== */
+
+:root {
+  /* Idioma Media Brand Colors */
+  --idioma-aureolin: #ECE91F;      /* Primary accent - Yellow */
+  --idioma-majorelle: #574AE2;     /* Secondary accent - Blue */
+  --idioma-erie-black: #1D1E1B;    /* Primary dark */
+  --idioma-ivory: #FDFDEC;         /* Primary light / cream */
+  --idioma-silver: #9B9B9B;        /* Secondary gray */
+}
+
+
+/* ========================================
+   BUTTON HOVER EFFECTS
+   ======================================== */
+
+/* DARK THEME ONLY - Button hover with Aureolin yellow background and white text */
+.body-wrapper.dark .rr-btn:hover {
+  background-color: var(--idioma-aureolin) !important;
+  border-color: var(--idioma-aureolin) !important;
+  transition: all 0.3s ease;
+}
+
+/* Force white text color on hover for dark theme only */
+.body-wrapper.dark .rr-btn:hover .btn-wrap .text-one,
+.body-wrapper.dark .rr-btn:hover .btn-wrap .text-two {
+  color: #ffffff !important;
+}
+
+/* Submit buttons - same hover effect for dark theme only */
+.body-wrapper.dark .rr-btn[type="submit"]:hover,
+.body-wrapper.dark button.rr-btn:hover {
+  background-color: var(--idioma-aureolin) !important;
+  border-color: var(--idioma-aureolin) !important;
+}
+
+.body-wrapper.dark .rr-btn[type="submit"]:hover .btn-wrap .text-one,
+.body-wrapper.dark .rr-btn[type="submit"]:hover .btn-wrap .text-two,
+.body-wrapper.dark button.rr-btn:hover .btn-wrap .text-one,
+.body-wrapper.dark button.rr-btn:hover .btn-wrap .text-two {
+  color: #ffffff !important;
+}
+
+/* Light theme - keep default hover behavior (no custom styles needed) */
+
+/* Smooth transition for all buttons */
+.rr-btn,
+.rr-btn .btn-wrap span {
+  transition: all 0.3s ease;
+}
+
+
+/* ========================================
+   OPTIONAL: ACCENT COLOR UTILITIES
+   ======================================== */
+
+/* Use these classes to apply brand colors anywhere */
+.text-aureolin {
+  color: var(--idioma-aureolin);
+}
+
+.bg-aureolin {
+  background-color: var(--idioma-aureolin);
+}
+
+.border-aureolin {
+  border-color: var(--idioma-aureolin);
+}
+
+.text-majorelle {
+  color: var(--idioma-majorelle);
+}
+
+.bg-majorelle {
+  background-color: var(--idioma-majorelle);
+}
