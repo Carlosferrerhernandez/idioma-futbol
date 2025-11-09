@@ -58,6 +58,35 @@
 
 
 /* ========================================
+   NAVIGATION MENU HOVER EFFECTS
+   ======================================== */
+
+/* DARK THEME ONLY - Navigation links hover with Aureolin Yellow */
+.body-wrapper.dark .header-area-2 .main-menu ul li a:hover {
+  color: var(--idioma-aureolin) !important;
+  transition: color 0.3s ease;
+}
+
+/* Active/current page link in dark theme */
+.body-wrapper.dark .header-area-2 .main-menu ul li.active a,
+.body-wrapper.dark .header-area-2 .main-menu ul li a.active {
+  color: var(--idioma-aureolin) !important;
+}
+
+/* Mobile menu hover for dark theme */
+.body-wrapper.dark .mobile-menu ul li a:hover {
+  color: var(--idioma-aureolin) !important;
+  transition: color 0.3s ease;
+}
+
+/* Smooth transition for navigation links */
+.header-area-2 .main-menu ul li a,
+.mobile-menu ul li a {
+  transition: color 0.3s ease;
+}
+
+
+/* ========================================
    OPTIONAL: ACCENT COLOR UTILITIES
    ======================================== */
 
