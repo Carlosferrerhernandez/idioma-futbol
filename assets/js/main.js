@@ -264,7 +264,7 @@
         slidesPerView: 'auto',
         loop: true,
         autoplay: true,
-        spaceBetween: 0,
+        spaceBetween: 30,
         speed: 5000,
         allowTouchMove: false,
         autoplay: {
