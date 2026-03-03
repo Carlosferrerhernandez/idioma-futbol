@@ -244,6 +244,27 @@
   }
 }
 
+/* Mobile: image on top, full width, centered, no crop */
+@media only screen and (max-width: 767px) {
+  .services-wrapper-1 .service-box {
+    grid-template-columns: 1fr;
+  }
+
+  .services-wrapper-1 .service-box .thumb {
+    order: -1;
+    grid-column: auto;
+    text-align: center;
+  }
+
+  .services-wrapper-1 .service-box .thumb img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+}
+
 
 /* ========================================
    SPACING ADJUSTMENTS
